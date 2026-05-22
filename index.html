@@ -136,9 +136,10 @@
 
   <div class="toggle">
     <button id="tEN" class="on" onclick="setMode('en')">English</button>
-    <button id="tDESI" onclick="setMode('desi')">Desi</button>
+    <button id="tHI" onclick="setMode('hi')">हिंदी</button>
+    <button id="tMR" onclick="setMode('mr')">मराठी</button>
   </div>
-  <div class="hint">Each mode keeps its own list. Saved only on this browser, not synced.</div>
+  <div class="hint">Each language keeps its own list. Saved only on this browser, not synced.</div>
 
   <div class="rule"></div>
 
@@ -220,37 +221,66 @@ const DATA = {
       {no:"06",name:"Spices, Tea & Extras",why:"Anti-inflammatory",items:["Turmeric","Ginger","Green Tea","Dark Chocolate 85%","Pumpkin Seeds","Beetroot"]}
     ]
   },
-  desi:{
-    snackLabel:"Munch ideas",
+  hi:{
+    snackLabel:"नाश्ते के आइडिया",
     snacks:[
-      {id:"d_chana",icon:"chana",t:"Bhuna Chana",d:"Protein · fiber"},
-      {id:"d_makhana",icon:"makhana",t:"Masala Makhana",d:"Low cal · magnesium"},
-      {id:"d_dahi",icon:"dahi",t:"Dahi + Alsi",d:"Probiotic · omega-3"},
-      {id:"d_moong",icon:"moong",t:"Moong Sprout Chaat",d:"Enzymes · plant protein"},
-      {id:"d_akhrot",icon:"walnut",t:"Akhrot Mutthi Bhar",d:"Brain fats · DHA"},
-      {id:"d_amla",icon:"amla",t:"Amla / Nimbu Pani",d:"Vit C · gut tonic"},
-      {id:"d_chaas",icon:"chaas",t:"Chaas / Kanji",d:"Fermented · cooling"},
-      {id:"d_khajur",icon:"khajur",t:"Khajur + Til",d:"Iron · natural sweet"},
-      {id:"d_haldi",icon:"haldi",t:"Haldi Doodh",d:"Anti-inflammatory"}
+      {id:"d_chana",icon:"chana",t:"भुना चना",d:"प्रोटीन · फाइबर"},
+      {id:"d_makhana",icon:"makhana",t:"मसाला मखाना",d:"लो कैलोरी · मैग्नीशियम"},
+      {id:"d_dahi",icon:"dahi",t:"दही + अलसी",d:"प्रोबायोटिक · ओमेगा-3"},
+      {id:"d_moong",icon:"moong",t:"मूंग स्प्राउट चाट",d:"एंजाइम · प्लांट प्रोटीन"},
+      {id:"d_akhrot",icon:"walnut",t:"मुट्ठी भर अखरोट",d:"ब्रेन फैट · DHA"},
+      {id:"d_amla",icon:"amla",t:"आंवला / नींबू पानी",d:"विटामिन C · गट टॉनिक"},
+      {id:"d_chaas",icon:"chaas",t:"छाछ / कांजी",d:"फर्मेंटेड · ठंडक"},
+      {id:"d_khajur",icon:"khajur",t:"खजूर + तिल",d:"आयरन · नैचुरल मिठास"},
+      {id:"d_haldi",icon:"haldi",t:"हल्दी दूध",d:"सूजन-रोधी"}
     ],
     cats:[
-      {no:"01",name:"Saag & Hari Sabzi",why:"Folate · fiber",items:["Palak","Methi","Sarson Saag","Curry Patta","Bathua","Lauki"]},
-      {no:"02",name:"Phal & Berries",why:"Polyphenols",items:["Jamun","Anaar","Amla","Sitaphal","Papita","Ber"]},
-      {no:"03",name:"Fermented Desi",why:"Live cultures",items:["Dahi","Chaas","Kanji","Idli/Dosa Batter","Dhokla","Achaar (kam tel)"]},
-      {no:"04",name:"Healthy Fats & Omega-3",why:"Brain fuel",items:["Akhrot","Alsi (flax)","Ghee (thoda)","Badam","Chia","Sarson Oil"]},
-      {no:"05",name:"Dal, Legumes & Prebiotics",why:"Feed the bugs",items:["Moong Dal","Masoor Dal","Rajma","Chana","Lahsun","Pyaaz"]},
-      {no:"06",name:"Masala, Chai & Extras",why:"Anti-inflammatory",items:["Haldi","Jeera","Adrak","Saunf","Green Tea","Kaddu ke Beej"]}
+      {no:"01",name:"साग व हरी सब्ज़ी",why:"फोलेट · फाइबर",items:["पालक","मेथी","सरसों साग","करी पत्ता","बथुआ","लौकी"]},
+      {no:"02",name:"फल व बेरीज़",why:"पॉलीफेनॉल",items:["जामुन","अनार","आंवला","सीताफल","पपीता","बेर"]},
+      {no:"03",name:"फर्मेंटेड देसी",why:"जीवित कल्चर",items:["दही","छाछ","कांजी","इडली/डोसा बैटर","ढोकला","अचार (कम तेल)"]},
+      {no:"04",name:"हेल्दी फैट व ओमेगा-3",why:"ब्रेन फ्यूल",items:["अखरोट","अलसी","घी (थोड़ा)","बादाम","चिया","सरसों तेल"]},
+      {no:"05",name:"दाल, फलियां व प्रीबायोटिक",why:"गट के लिए",items:["मूंग दाल","मसूर दाल","राजमा","चना","लहसुन","प्याज़"]},
+      {no:"06",name:"मसाला, चाय व अन्य",why:"सूजन-रोधी",items:["हल्दी","जीरा","अदरक","सौंफ","ग्रीन टी","कद्दू के बीज"]}
+    ]
+  },
+  mr:{
+    snackLabel:"नाश्त्याच्या कल्पना",
+    snacks:[
+      {id:"d_chana",icon:"chana",t:"भाजलेले चणे",d:"प्रथिने · फायबर"},
+      {id:"d_makhana",icon:"makhana",t:"मसाला मखाना",d:"कमी कॅलरी · मॅग्नेशियम"},
+      {id:"d_dahi",icon:"dahi",t:"दही + जवस",d:"प्रोबायोटिक · ओमेगा-3"},
+      {id:"d_moong",icon:"moong",t:"मूग मोड चाट",d:"एन्झाइम · प्रथिने"},
+      {id:"d_akhrot",icon:"walnut",t:"मूठभर अक्रोड",d:"मेंदूसाठी फॅट · DHA"},
+      {id:"d_amla",icon:"amla",t:"आवळा / लिंबू सरबत",d:"व्हिटॅमिन C · पोटासाठी"},
+      {id:"d_chaas",icon:"chaas",t:"ताक / कांजी",d:"फर्मेंटेड · थंडावा"},
+      {id:"d_khajur",icon:"khajur",t:"खजूर + तीळ",d:"लोह · नैसर्गिक गोडवा"},
+      {id:"d_haldi",icon:"haldi",t:"हळदीचं दूध",d:"दाहशामक"}
+    ],
+    cats:[
+      {no:"01",name:"पालेभाज्या व हिरव्या भाज्या",why:"फोलेट · फायबर",items:["पालक","मेथी","मोहरीची भाजी","कढीपत्ता","चाकवत","दुधी"]},
+      {no:"02",name:"फळं व बेरीज",why:"पॉलिफेनॉल",items:["जांभूळ","डाळिंब","आवळा","सीताफळ","पपई","बोरं"]},
+      {no:"03",name:"फर्मेंटेड पदार्थ",why:"जिवंत कल्चर",items:["दही","ताक","कांजी","इडली/डोसा पीठ","ढोकळा","लोणचं (कमी तेल)"]},
+      {no:"04",name:"हेल्दी फॅट व ओमेगा-3",why:"मेंदूसाठी",items:["अक्रोड","जवस","तूप (थोडं)","बदाम","चिया","मोहरी तेल"]},
+      {no:"05",name:"डाळी, कडधान्य व प्रीबायोटिक",why:"पोटासाठी",items:["मूग डाळ","मसूर डाळ","राजमा","हरभरा","लसूण","कांदा"]},
+      {no:"06",name:"मसाले, चहा व इतर",why:"दाहशामक",items:["हळद","जिरं","आलं","बडीशेप","ग्रीन टी","भोपळ्याच्या बिया"]}
     ]
   }
 };
 
-const STORE_KEY = "gutbrain_have_v1";
+const STORE_KEY = "gutbrain_have_v2";
 let mode = "en";
 let have = load();
 
+// per-language UI strings
+const UI = {
+  en:{snacksToGrab:"Snacks to grab", empty:"All ticked. Nothing to buy, you're stocked.", listTitle:"Gut & Brain shopping list (English)", items:n=>`(${n} item${n===1?"":"s"})`},
+  hi:{snacksToGrab:"नाश्ते लेने हैं", empty:"सब टिक हो गया. कुछ खरीदना नहीं, घर भरा है.", listTitle:"पेट व मेंदू शॉपिंग लिस्ट (हिंदी)", items:n=>`(${n} चीज़ें)`},
+  mr:{snacksToGrab:"नाश्ते घ्यायचे आहेत", empty:"सगळं टिक झालं. काही घ्यायचं नाही, घर भरलंय.", listTitle:"पोट व मेंदू खरेदी यादी (मराठी)", items:n=>`(${n} वस्तू)`}
+};
+
 function load(){
-  try{ return JSON.parse(localStorage.getItem(STORE_KEY)) || {en:{},desi:{}}; }
-  catch(e){ return {en:{},desi:{}}; }
+  try{ return JSON.parse(localStorage.getItem(STORE_KEY)) || {en:{},hi:{},mr:{}}; }
+  catch(e){ return {en:{},hi:{},mr:{}}; }
 }
 function save(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(have)); }catch(e){} }
 
@@ -309,10 +339,10 @@ function buildList(){
   }).filter(g=>g.missing.length);
 
   total = missingSnacks.length + catGroups.reduce((a,g)=>a+g.missing.length,0);
-  document.getElementById("count").textContent = `(${total} item${total===1?"":"s"})`;
+  document.getElementById("count").textContent = UI[mode].items(total);
 
   if(total===0){
-    groups.innerHTML = `<div class="empty">All ticked. Nothing to buy, you're stocked.</div>`;
+    groups.innerHTML = `<div class="empty">${UI[mode].empty}</div>`;
     return;
   }
 
@@ -323,7 +353,7 @@ function buildList(){
   });
   if(missingSnacks.length){
     const el = document.createElement("div");
-    el.innerHTML = `<div class="lg-name">Snacks to grab</div><div class="lg-items">${missingSnacks.join(", ")}</div>`;
+    el.innerHTML = `<div class="lg-name">${UI[mode].snacksToGrab}</div><div class="lg-items">${missingSnacks.join(", ")}</div>`;
     groups.appendChild(el);
   }
 }
@@ -331,13 +361,13 @@ function buildList(){
 function plainList(){
   const d = DATA[mode];
   const h = have[mode] || {};
-  let lines = [`Gut & Brain shopping list (${mode==="en"?"English":"Desi"})`,""];
+  let lines = [UI[mode].listTitle,""];
   d.cats.forEach(cat=>{
     const missing = cat.items.filter(it=>!h[key(cat.name,it)]);
     if(missing.length){ lines.push(cat.name+":"); missing.forEach(m=>lines.push("  - "+m)); lines.push(""); }
   });
   const ms = d.snacks.filter(s=>!h[s.id]).map(s=>s.t);
-  if(ms.length){ lines.push("Snacks to grab:"); ms.forEach(m=>lines.push("  - "+m)); }
+  if(ms.length){ lines.push(UI[mode].snacksToGrab+":"); ms.forEach(m=>lines.push("  - "+m)); }
   return lines.join("\n");
 }
 
@@ -356,7 +386,8 @@ function fallbackCopy(txt,cb){
 function setMode(m){
   mode=m;
   document.getElementById("tEN").classList.toggle("on",m==="en");
-  document.getElementById("tDESI").classList.toggle("on",m==="desi");
+  document.getElementById("tHI").classList.toggle("on",m==="hi");
+  document.getElementById("tMR").classList.toggle("on",m==="mr");
   render();
 }
 function resetMode(){
